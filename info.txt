@@ -1,0 +1,12 @@
+
+. Fully Editable Files (Fully layered files)
+. 3.5 x 2 (3.75 x 2.25 with bleeds + Trim Mark) - Horizontal
+. 300DPI CMYK Print Ready
+. Fonts Used: Nexa Bold and Nexa Light, Lato
+. Fonts links:
+  http://www.fontsquirrel.com/fonts/lato
+  http://www.fontsquirrel.com/fonts/nexa
+
+
+
+

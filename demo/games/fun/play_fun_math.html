@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
+    <title>Fun Math - Beginner</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+		window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+		// Hide the address bar!
+		window.scrollTo(0, 1);
+	  }, 0);
+	});
+    
+    var sum = 0;
+    var tempindex = 0;
+    var numbers = new Array();
+	var timeUp   = 1500;
+	var sumtemp = 0;
+    var numtemp = new Array();
+	
+	function randomFromTo(from, to){
+        return Math.floor(Math.random() * (to - from + 1) + from);
+    }
+    
+    Array.prototype.clean = function(deleteValue) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == deleteValue) {         
+                this.splice(i, 1);
+                i--;
+            }
+        }
+        return this;
+    };
+    
+    function generateRandomSum() {
+        var looprand    = randomFromTo(1, 3);
+        var total       = 0;
+        var arrayIndex  = new Array();
+        
+        if (looprand > numbers.length) {
+            looprand = numbers.length;
+        }
+        
+        for (j=0; j<looprand; j++) {
+            var randindex = randomFromTo(0, numbers.length - 1);
+            randindex = getUnique(randindex, arrayIndex);
+
+            total = total + numbers[randindex];
+            arrayIndex[j] = randindex;
+        }
+        sum = total;
+        $("#nextsum").html(total);
+    }
+    
+    function getUnique(index, arrayIn) {
+        if ((jQuery.inArray(index, arrayIn) == -1)) {
+            return index;
+        } else {
+            rindex = randomFromTo(0, numbers.length - 1);
+            return getUnique(rindex, arrayIn);
+        }
+    }       
+    
+    
+    
+    // store temporary index in array
+    var arrIndex = new Array();
+    function boxClick(obj) {
+        if (!$(obj).hasClass("disable")) {
+            var clickedindex = parseInt($(obj).attr("id").replace("num", ""));
+            var temp = parseInt($(obj).find("p").html());
+
+            if (!$(obj).hasClass("selected")) {
+                $(obj).addClass("selected clicked");
+                // store clicked index in array
+                arrIndex[tempindex] = clickedindex;
+                sumtemp = sumtemp + temp;
+                tempindex++;
+
+                // temporary sum is match
+                if (sumtemp == sum) {
+                    $(".clicked").unbind("click");
+                    $(".clicked").removeAttr("id");
+                    $(".clicked").addClass("disable");
+                    $(".clicked").animate({
+                       backgroundColor: "#32bebd",
+                       color: "#32bebd"
+                    }, 500, function() {
+                        $(".disable").removeClass("clicked");
+						$(".disable").css("visibility","hidden");
+                    });
+
+                    // change each box id
+                    var y = 0;
+                    $("#game_contaner div.boxnum").each(function(index) {
+                        if (!$(this).hasClass("disable")) {
+                            $(this).attr("id", "num"+y);
+                            y++;
+                        }
+                    });
+
+                    // delete matched number
+                    for ( z = 0; z < arrIndex.length; z++) {
+                        delete numbers[arrIndex[z]];
+                    }
+
+                    // delete temporay index
+                    for ( e = 0; e <= arrIndex.length; e++) {
+                        delete arrIndex[e];
+                    }
+                    arrIndex.clean(undefined);
+                    numbers.clean(undefined);
+
+                    sum = 0;
+                    sumtemp = 0;
+                    // reset index
+                    tempindex = 0;
+                    
+                    generateRandomSum();
+                    
+                    // Game Finished
+                    if (numbers.length == 0) {
+						clearInterval(gameLoop);
+						$(".time").remove();
+						$("#game_contaner").remove();
+						$("#addup_info").remove();
+						$("#nextsum").css("font-size", "24px");
+                        $("#nextsum").html("Félicitation!<br />Vous avez résolu toutes les questions!<br />");
+                    } 
+                }
+
+                // temporary sum not match
+                if (sumtemp > sum) {
+                    $("#game_contaner").effect("shake", { times: 2 }, 100, function() {
+                        sumtemp = 0;
+                        $(".boxnum").removeClass("selected");
+                        $(".clicked").removeClass("clicked");
+                        $("#sum").html(sumtemp);
+
+                        // delete the temporary array & reset index
+                        numtemp = new Array();
+                        tempindex = 0;
+                    });
+                }
+            } else {
+                $(obj).removeClass("selected");
+                $(obj).removeClass("clicked");
+
+                // remove clicked index
+                for (x = 0; x < arrIndex.length; x++) {
+                    if (arrIndex[x] == clickedindex) {
+                        arrIndex.splice(x, 1);
+                    }
+                }
+                tempindex--;
+
+                sumtemp = sumtemp - temp;
+            }
+        }
+    }
+	
+	//check time up or not
+	function timeUpCount() {
+		if(timeUp >= 1) {
+			timeUp --;
+		} else {
+			clearInterval(gameLoop);
+			$("#game_contaner").remove();
+			$(".time").remove();
+			$("#nextsum").css("font-size", "24px");
+			$("#nextsum").html("Perdu!<br />Améliorer vos compétences en mathématiques! <br /><a href='index.html'>Défier encore</a>");
+			$("#addup_info").remove();
+		}
+		$("#timeCount").css("font-size", "24px");
+		$("#timeCount").html(timeUp);
+	}
+		
+    function start() {
+        // create a number of box and generate random number in array
+        sum          = 0;
+        sumtemp      = 0;
+        tempindex    = 0;
+        var val          = 4; //parseInt($("#cbdim").val());
+        var boxloop      = val * val;
+        var boxleft      = ($(window).width() - (val * 78)) / 2;
+        $("#game_contaner").html('<div id="boxclear"></div>');
+        
+        for ( i = 0; i < boxloop; i++) {
+            numbers[i] = randomFromTo(1, 15);
+            $('#boxclear').before('<div class="boxnum" id="num'+i+'" '+
+                ' onclick="boxClick(this);"><p>'+numbers[i]+'</p></div>');
+        }
+        generateRandomSum();
+		gameLoop = setInterval(timeUpCount, 1000/60);	
+    }
+	
+	$(document).ready(function() {
+		start();						 
+	});
+    </script>
+    
+    <style type="text/css">
+        * {
+            font-family:'Open Sans Condensed', sans-serif;
+        }
+		p {
+			margin: 0;	
+		}
+        body {
+            background: #F8B300;
+			margin: 0;
+        }
+        #viewport {
+            margin: 0 auto;
+            text-align: center;
+			width: 324px;
+        }
+        #game_contaner {
+            padding: 2px;
+            margin: 0 auto;
+        }
+        .boxnum {
+            text-align: center;
+            cursor: pointer;
+            background: #fff;
+            width: 74px;
+            height: 50px;
+            margin: 3px;
+            float: left;
+            color: #104847;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .boxnum:hover {
+            background: #fff;
+        }
+        .boxnum p {
+            margin-top: 5px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .selected {
+            background: #1c4e4d;
+			color: #fff;
+        }
+        .selected:hover {
+            background: #1c4e4d !important;
+        }
+        #boxclear {
+            clear: both;
+        }
+    
+		.instruction {
+			color: #1c4e4d;	
+		}
+		#addup_info {
+			color: #fff;
+			font-size: 26px;
+		}
+		#nextsum { 
+            font-weight: bold;
+            font-size: 55px;
+
+        }
+		#nextsum a {
+			color: #fff;
+			text-decoration: none;
+		}
+		#timeCount { 
+            font-weight: bold;
+            font-size: 40px;
+		.time {
+			margin-bottom: 5px;	
+		}
+		.copyright {
+			margin: 5px;	
+		}
+		
+		.other_game {
+		background: #28AAA9;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 10px;
+		text-align: left;
+		width: 300px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		}
+		.other_game p {
+			color: #fff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: normal;
+			font-size: 14px;
+			margin: 0 0 10px;
+		}
+		.other_game ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.other_game ul li {
+			margin-top: 10px;	
+		}
+		
+		.other_game ul li:first-child {
+			margin: 0;	
+		}
+		
+		.other_game ul li img {
+			float: left;
+			margin-right: 10px;
+		}
+		.other_game a {
+			display:block;
+			color: #fff;	
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			overflow: hidden;
+			text-decoration: none;
+		}
+		.other_game a span {
+			font-size: 12px;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #fff;
+		}
+    </style>
+
+</head>
+<body>
+    <div id="viewport">
+        <p class="instruction"><span id="addup_info">ajouter jusqu'à: </span><span id="nextsum">0</span></p>
+		<p class="time">Temps: <span id="timeCount">600</span></p>
+        <div id="game_contaner">
+            <div id="boxclear" style="clear:both"></div>
+        </div>
+        <div class="copyright">Copyright &copy; <script>var year = new Date().getFullYear(); document.write(year);</script> Med Inifnity</div>
+    </div><!-- END viewport -->
+</body>
+</html>

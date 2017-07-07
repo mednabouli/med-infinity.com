@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="js/flipbook.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/flipbook.style.css">
+    <link rel="stylesheet" type="text/css" href="css/flipbook.skin.white.css">
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var book1 = $("#container").flipBook({
+                pages:[
+                    {src:"images/book/p1.jpg", thumb:"images/book/thumb1.jpg", title:"Cover"},
+                    {src:"images/book/p2.jpg", thumb:"images/book/thumb2.jpg", title:"Web Agency"},
+                    {src:"images/book/p3.jpg", thumb:"images/book/thumb3.jpg", title:"Conseil"},
+                    {src:"images/book/p4.jpg", thumb:"images/book/thumb4.jpg", title:"Developpement Web"},
+                    {src:"images/book/p5.jpg", thumb:"images/book/thumb5.jpg", title:"Developpement Mobile"},
+                    {src:"images/book/p6.jpg", thumb:"images/book/thumb6.jpg", title:"Studio Graphique"},
+                    {src:"images/book/p7.jpg", thumb:"images/book/thumb7.jpg", title:"Referancement"},
+                    {src:"images/book/p8.jpg", thumb:"images/book/thumb8.jpg", title:"Formation/Coaching"},
+					{src:"images/book/p9.jpg", thumb:"images/book/thumb9.jpg", title:"A nous"},
+					{src:"images/book/p10.jpg", thumb:"images/book/thumb10.jpg", title:"End"}
+                ],
+
+                //menu
+                btnNext:true,
+                btnPrev:true,
+                btnZoomIn:true,
+                btnZoomOut:true,
+                btnToc:true,
+                btnThumbs:true,
+                btnShare:false,
+                btnExpand:true,
+
+                startPage:0,
+
+                pageWidth:1000,
+                pageHeight:1414,
+                thumbnailWidth:100,
+                thumbnailHeight:141,
+
+                flipType:'3d',
+
+                time1:500,
+                time2:600
+
+            });
+
+        })
+    </script>
+
+</head>
+
+<body>
+<div id="container" style=""></div>
+</body>
+
+</html>

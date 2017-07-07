@@ -1,0 +1,520 @@
+body {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	background-attachment: fixed;
+	background-color: rgb(255, 255, 255);
+	color:#373737;
+	font-family: 'Roboto', Calibri, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	margin:0;
+	min-width: 300px;
+	padding:0;
+}
+h1, h2 {
+	margin: 10px 0;
+	font-weight: 700;
+}
+h1 {
+	font-size: 36px;
+	font-weight: 700;
+}
+h2 {
+	padding-bottom: 10px;
+	font-size: 32px;
+}
+a {
+	text-decoration: none;
+}
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}
+img {
+	-webkit-box-shadow: 0 0 5px #ebebeb;
+	box-shadow: 0 0 5px #ebebeb;
+	border: 1px solid #ebebeb;
+	margin: 10px auto;
+	max-width: 739px;
+	padding: 5px;
+	position: relative;
+}
+
+
+
+/*** jQuery.mobile ***/
+/* workaround flickers and flashes during or at the end of a transition */
+/*.ui-page { -webkit-backface-visibility: hidden; }*/
+#game-page {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+.ui-content {
+	overflow: visible;
+	overflow-y: visible;
+	margin: 0 auto;
+}
+
+/* .darken class height 100% */
+.ui-panel-content-wrap {
+	display: block;
+}
+.ui-content {
+	display: block;
+	max-width: 600px;
+}
+.ui-panel-content-wrap {
+	width: 100%;
+}
+
+
+
+
+#project_title {
+	-webkit-text-stroke: 1px; /* chrome fix */
+	clear: both;
+	color: #fff;
+	font-family: 'Wendy One', Calibri, Helvetica, Arial, sans-serif;
+	font-size: 4.5em;
+	font-weight: 100;
+	line-height: 1em;
+	margin: 0;
+	max-width: 600px;
+	text-align: center;
+	text-shadow: #111 0 0 15px;
+}
+#project_tagline {
+	background: none;
+	color: #fff;
+	font-size: 1.5em;
+	font-weight: 100;
+	margin: 10px auto;
+	max-width: 600px;
+	text-align: center;
+	text-shadow: #111 0 0 5px;
+}
+#progress {
+	display: block;
+  	width:123px;
+  	height:100px;
+	margin: 0 auto;
+	position: relative;
+	bottom:10px;
+	right:0;
+}
+#gauge {
+	display: block;
+	width:inherit;
+	height:inherit;
+}
+#gauge tspan {
+	color: #fff;
+	text-shadow: none;
+}
+
+
+/*** game container ***/
+.game {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display: inline-block;
+	margin: 0;
+	padding: 5% 2%;
+	text-align: center;
+	width: 90%;
+
+	border: 1px solid rgba(245,245,245,.1);
+	border-radius: 15px;
+	/*box-shadow: 0 0 100px 5px rgba(39, 147, 252, .4);*/
+	box-shadow: 0 0 100px 5px rgba(0, 0, 0, .3);
+}
+
+/*** controls ***/
+.reset {
+	display: block;
+	margin: 20px auto;
+}
+
+/*** game answers ***/
+.buttons {
+	border-radius: 10px;
+	border-width: 3px;
+	display: inline-block;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+.buttons li {
+	border: 2px solid rgba(0,0,0,.2);
+	border-radius: 10px;
+	box-shadow: 0 0 0 5px rgba(0,0,0, .1);
+	cursor: pointer;
+	color: #fff;
+	float: left;
+	font-size: 2em;
+	line-height: 2em;ma
+	list-style: none;
+	margin: 5px;
+	padding: 0;
+	outline: none;
+	overflow: hidden;
+	text-align: center;
+	text-shadow: 0 0 4px #000;
+	width: 2em;
+}
+.buttons .number {
+	background-color: transparent;
+}
+.buttons-wrapper {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+
+/*** answers ***/
+.answers li:nth-child(3n+1) {
+	clear: left;
+}
+.answers li:nth-child(10) {
+	margin: 5px;
+	padding: 0 33% 0 0;
+}
+.answers li.solution {
+	background-color: #444;
+	border-radius: 50%;
+	color: #fff;
+}
+.answers li.invalid,
+.statement span.invalid {
+	border: 2px solid rgba(0,0,0,.2);
+	background-color: #b00;
+	border-radius: 50%;
+}
+.answers li.invalid {
+	border-width: 2px;
+}
+
+/*** addition operator specific ***/
+.addition-operation .hover {
+	background-color: #0b0;
+}
+/*** subtraction operator specific ***/
+.subtraction-operation .hover {
+	background-color: #e64433;
+}
+/*** multiplication operator specific ***/
+.multiplication-operation .hover {
+	background-color: rgb(86, 163, 241);
+}
+/*** division operator specific ***/
+.division-operation .hover {
+	background-color: rgb(236, 170, 51);
+}
+.operations {
+	margin-left: 1%;
+}
+.operations li {
+	clear: left;
+	background-color: #00c500;
+}
+.operations .hover,
+.display-solutions.hover {
+	border-radius: 50%;
+}
+
+/*** math operations specific ***/
+/* addition */
+.addition-operation .active,
+.statement .addition,
+.addition .selected {
+	background-color: #00c200;
+	box-shadow: 0 0 15px 5px rgba(32, 212, 32, 0.5);
+}
+.addition.inactive {
+	background-color: #090;
+}
+/* subtraction */
+.subtraction-operation .active,
+.statement .subtraction,
+.subtraction .selected {
+	background-color: #e65546;
+	box-shadow: 0 0 15px 5px rgba(230, 68, 51, .6);
+}
+.subtraction.inactive {
+	background-color: #e64433;
+}
+/* multiplication */
+.multiplication-operation .active,
+.statement .multiplication,
+.multiplication .selected {
+	background-color: #2793ff;
+	box-shadow: 0 0 15px 5px rgba(39, 147, 252, .4);
+}
+.multiplication.inactive {
+	background-color: rgba(29, 142, 255,.7);
+}
+/* division */
+.division-operation .active,
+.operation.division,
+.division .selected {
+	background-color: #eea31d;
+	box-shadow: 0 0 15px 5px rgba(252, 175, 39, .4);
+}
+.division.inactive {
+	background-color: #e99b0f;
+}
+
+
+.buttons .selected,
+.buttons .active {
+	border-radius: 50%;
+}
+.buttons .used {
+	background-color: #444;
+	color: transparent;
+	cursor: default;
+	text-shadow: none;
+}
+
+
+/*** level ***/
+.level {
+	font-size: 36px;
+	font-weight: 700;
+	margin: 20px auto;
+	text-align: center;
+}
+.level-progress {
+	border-radius: 10px;
+	background: #e6e5e2;
+	box-shadow: 0 0 14px 5px rgba(0, 0, 0, .1) inset;
+}
+.level-progress .percentage-container {
+	-webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, .1);
+	border-radius: 10px;
+	cursor: default;
+	position: relative;
+}
+div.level-progress div.percentage-container { /*** fix ***/
+	overflow: hidden !important;
+}
+div.level-progress div.percentage { /*** fix ***/
+	overflow: hidden !important;
+}
+div.percentage span {
+	overflow: hidden !important;
+}
+.level-progress .percentage {
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .25);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, .25);
+	border-radius: 25px;
+	border-width: 0;
+	color: #fff;
+	text-align: center;
+	width: 0;
+}
+.level-progress .less {
+	color: #666;
+	border-radius:0;
+}
+.percentage.addition {
+	background-color: #090;
+	background: -webkit-linear-gradient(top, #1cbb1c, #090);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1cbb1c), to(#090));
+	background: -moz-linear-gradient(top, #1cbb1c, #090);
+	background: -ms-linear-gradient(top, #1cbb1c, #090);
+	background: -o-linear-gradient(top, #1cbb1c, #090);
+}
+.percentage.subtraction {
+	background-color: #090;
+	background: -webkit-linear-gradient(top, #e66b5c, #c43);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e66b5c), to(#C43));
+	background: -moz-linear-gradient(top, #e66b5c, #c43);
+	background: -ms-linear-gradient(top, #e66b5c, #c43);
+	background: -o-linear-gradient(top, #e66b5c, #c43);
+}
+.percentage.multiplication {
+	background-color: #090;
+	background: -webkit-linear-gradient(top, #5AA6F1, #27c);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5AA6F1), to(#27c));
+	background: -moz-linear-gradient(top, #5AA6F1, #27c);
+	background: -ms-linear-gradient(top, #5AA6F1, #27c);
+	background: -o-linear-gradient(top, #5AA6F1, #27c);
+}
+.percentage.division {
+	background-color: #090;
+	background: -webkit-linear-gradient(top, #ffac17, #e99b0f);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffac17), to(#e99b0f));
+	background: -moz-linear-gradient(top, #ffac17, #e99b0f);
+	background: -ms-linear-gradient(top, #ffac17, #e99b0f);
+	background: -o-linear-gradient(top, #ffac17, #e99b0f);
+}
+
+/*** question ***/
+.question {
+	font-size: 1.5em;
+	margin: 0 auto 5%;
+	text-align: center;
+}
+.question span {
+	cursor: default;
+	display: inline-block;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(2,2,2,.4);
+	margin: 5px 0;
+}
+.operation.addition ,
+.operation.subtraction,
+.operation.multiplication,
+.operation.division {
+	border-radius: 12px;
+	color: #fff;
+	display: inline-block;
+	font-size: 35px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 10px;
+	text-align: center;
+	width: 40px;
+}
+.number,
+.answer {
+	-webkit-box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
+
+	background-color: #494949;
+	border: 2px solid rgba(0,0,0,.2);
+	border-radius: 50px;
+	color: #fff;
+	font-size: 35px;
+	/*height: 50px;*/
+	line-height: 50px;
+	min-width: 50px;
+}
+.number span {
+	margin: 2px 15px 0 15px;
+}
+.answer .vinculus {
+	border-top: 3px solid white;
+	height: 35px;
+	line-height: 35px;
+	margin: 0 15px 0 -15px;
+}
+.question .equal {
+	font-size: 1.7em;
+	margin: 0 .25em;
+}
+.question-text {
+	line-height: 1em;
+	color: #fff;
+	font-size: 1em;
+	margin: 0 0 5% 0;
+	text-shadow: 1px 1px 1px rgba(2,2,2,.4);
+}
+.statement {
+	color: #fff;
+	text-align: center;
+}
+.operation {
+	border-radius: 25%;
+	border: 2px solid rgba(0,0,0,.2);
+	margin: 0 15px;
+}
+
+
+
+/*** body class addition operation ***/
+.addition-operation #game-page {
+	background-color: #093309; /* fallback */
+	background: -webkit-radial-gradient(#19A719, #093309);
+	background: -moz-radial-gradient(#19A719, #093309);
+	background: -o-radial-gradient(#19A719, #093309);
+	background: -ms-radial-gradient(#19A719, #093309);
+	background: radial-gradient(#19A719, #093309);
+}
+/*** body class subtraction operation ***/
+.subtraction-operation #game-page {
+	background-color: #210b08; /* fallback */
+	background: -webkit-radial-gradient(#c43, #210b08);
+	background: -moz-radial-gradient(#c43, #210b08);
+	background: -o-radial-gradient(#c43, #210b08);
+	background: -ms-radial-gradient(#c43, #210b08);
+	background: radial-gradient(#c43, #210b08);
+}
+/*** body class multiplication operation ***/
+.multiplication-operation #game-page {
+	background-color: #061321; /* fallback */
+	background: -webkit-radial-gradient(#27c, #061321);
+	background: -moz-radial-gradient(#27c, #061321);
+	background: -o-radial-gradient(#27c, #061321);
+	background: -ms-radial-gradient(#27c, #061321);
+	background: radial-gradient(#27c, #061321);
+}
+/*** body class division operation ***/
+.division-operation #game-page {
+	background-color: #392503; /* fallback */
+	background: -webkit-radial-gradient(#e2920b, #392503);
+	background: -moz-radial-gradient(#e2920b, #392503);
+	background: -o-radial-gradient(#e2920b, #392503);
+	background: -ms-radial-gradient(#e2920b, #392503);
+	background: radial-gradient(#e2920b, #392503);
+}
+
+
+
+/*** Control aspect ratios ***/
+/*
+<div class="wrapper main-box">
+    <div class="three-by-four aspect-ratio"></div>
+    <div class="content">
+        <ul class="numbers buttons addition"></ul>
+    </div>
+</div>
+*/
+
+.wrapper {
+	position: relative;
+	width: 50%; /* <-- just a default, can be anything. */
+}
+.three-by-two.aspect-ratio { padding-bottom: 66.666% }
+.three-by-four.aspect-ratio { padding-bottom: 66.666% }
+.four-by-three.aspect-ratio { padding-bottom: 75% }
+.five-by-two.aspect-ratio { padding-bottom: 40% }
+.sixteen-by-nine.aspect-ratio { padding-bottom: 56.25% }
+
+.content {
+    position: absolute;
+    top: 0;  bottom: 0;  left: 0;  right: 0;
+    padding: 0;
+}
+/*
+	The classes above have all of the aspect ratio magic we need.
+	They can be reused on any element.
+	Below are some element-specific styles
+*/
+.half {
+	width: 50%;
+	float: left;
+	background: beige;
+}
+/* Positioning for the main box */
+.main-box {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 90%;
+}
+/* Styles for the content in the main box */
+.main-box > .content {
+    /*background: rgba(10,10,10,.25);
+    border-radius: 10px;*/
+}

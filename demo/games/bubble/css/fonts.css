@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: bold;
+  src: local(Arvo Bold), local(Arvo-Bold), url(../Font/permanentmarker.woff);
+}
+@font-face {
+  font-family: 'Open Sans Extrabold';
+  font-style: normal;
+  font-weight: 800;
+  src: local(Open Sans Extrabold), local(OpenSans-Extrabold), url(../Font/permanentmarker.woff);
+}
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: normal;
+  src: local(Permanent Marker), local(PermanentMarker), url(../Font/permanentmarker.woff);
+}
+@font-face {
+  font-family: 'Open Sans Semibold';
+  font-style: normal;
+  font-weight: 600;
+  src: local(Open Sans Semibold), local(OpenSans-Semibold), url(../Font/permanentmarker.woff);
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local(Open Sans Bold), local(OpenSans-Bold), url(../Font/permanentmarker.woff);
+}
+
+font-family: 'Permanent Marker', cursive;
+font-family: 'Arvo', serif;
+font-family: 'Open Sans', sans-serif;

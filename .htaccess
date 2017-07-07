@@ -1,0 +1,2 @@
+AddHandler application/x-httpd-php5 .html .htm
+php_value auto_prepend_file "/home/haythem_med/med-infinity.com/seogenie.php"

@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>Brain Challenge</title>
+<link href="images/favicon.ico" rel="shortcut icon">
+<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+<style type="text/css">
+body{background:url(images/bg.jpg) repeat left top;color:#fff;font-family:'Bree Serif',serif;font-size:13px;margin:0;padding:0;-webkit-text-size-adjust:none}h1{color:#fff;font-size:28px;margin-top:10px}h2{border-top:1px dotted #fff;margin-top:30px;padding-top:30px}a{color:#FFF;text-decoration:none}p{margin-top:0}p.sequence{color:#fff;font-size:20px;margin:0 0 10px}span.blank{border:2px dotted #ffc000;color:#ffc000;padding:1px 10px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px}.wrapper{background:url(images/chalkboard.png) no-repeat center -15px;text-align:center;position:relative;height:430px;width:100%;top:40px;}.splash,.howto,ul.hud{position:absolute;left:50%}.splash{background:url(images/icons.png) no-repeat center -200px;margin-left:-216px;padding-top:189px;top:10px}.howto{margin-left:-232px;top:10px}.all_quest{position:relative;top:80px}.button{border:2px solid #ffc000;color:#ffc000;display:inline-block;font-size:16px;margin-top:5px;padding:5px 10px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px}ul{list-style-type:none;margin:0;padding:0}ul li{display:inline-block;margin:0;padding:0}ul.hud{top:30px;margin-left:-150px}ul.hud li{color:#fff;margin:0 10px;text-align:left;width:105px}ul.hud li.timeCount{background:url(images/icons.png) no-repeat left -62px;padding-left:25px}ul.hud li.totalQuest{background:url(images/icons.png) no-repeat -148px -62px;padding-left:25px}.answer{margin-top:50px}.answer ul li{font-size:24px;margin:0 10px 10px}.answer ul li a{border:2px solid #ffc000;color:#ffc000;display:inline-block;padding:1px 10px;height:30px;width:15px;text-indent:-99999px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px}.answer ul li a.option_a:hover,.answer ul li a.option_b:hover,.answer ul li a.option_c:hover,.answer ul li a.option_d:hover{background-color:#0f591b}.answer ul li a.option_a{background:url(images/icons.png) no-repeat 9px -5px}.answer ul li a.option_b{background:url(images/icons.png) no-repeat -48px -5px}.answer ul li a.option_c{background:url(images/icons.png) no-repeat -114px -5px}.answer ul li a.option_d{background:url(images/icons.png) no-repeat -176px -5px}a.disable_click{pointer-events:none}.hint{height:20px;position:relative;top:85px}.tick{background:url(images/icons.png) no-repeat left -110px;text-indent:-99999px;height:50px;width:55px}.cross{background:url(images/icons.png) no-repeat -75px -110px;text-indent:-99999px;height:50px;width:55px}.result{margin:0 auto;position:relative;top:-5px}.result span.score{color:#91da4b;display:block;font-size:24px}.copyrights{position:absolute;margin-left:-173px;left:50%;top:416px;width:346px}.copyrights p{color:#000;text-shadow:0 1px #d77329}.fb_plugin{margin:0 auto;padding:0 20px;width:320px}@media screen and (max-width:320px){.wrapper{overflow-x:hidden;width:320px;min-width:320px;top: 40px;}.splash{margin-left:-160px;width:320px}.splash h1{font-size:18px}h2{margin-top:15px;padding-top:15px}.howto{margin-left:-150px;width:300px}.copyrights p{font-size:11px}.fb_plugin{width:280px;padding:0}.result{width:280px}.result span.score{font-size:16px}}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="splash">
+    	<h1>Brain Challange - Mathematique</h1>
+    	<p><a href="#" class="button">Play</a></p>
+    </div><!-- END splash -->
+    <div class="howto">
+    	<h1>Comment jouer?</h1>
+        <p>Vous voulez savoir comment vous êtes intelligent? Jouons et profiter du plaisir!</p>
+        <h2>Instruction</h2>
+        <p>Choisissez le symbole mathématique correct</p>
+    	<p><a href="#" class="button">Start!!!</a></p>
+    </div><!-- END howto -->
+    
+	<ul class="hud">
+        <li class="timeCount"></li><!-- END timeCount -->
+        <li class="totalQuest"></li><!-- END totalQuest -->
+    </ul>
+    <div class="all_quest">
+        <div class="quest1">
+        	<p class="sequence">Question 1</p>
+            <h1>28 <span class="blank">?</span> 6 = 22</h1>
+            <div class="answer">
+            	<ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="dui">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest1 -->
+        
+        <div class="quest2">
+            <p class="sequence">Question 2</p>
+            <h1>6 <span class="blank">?</span> 9 = 54</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="dui">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest2 -->
+        
+        <div class="quest3">
+            <p class="sequence">Question 3</p>
+            <h1>72 <span class="blank">?</span> 9 = 8</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="dui">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest3 -->
+        
+        <div class="quest4">
+            <p class="sequence">Question 4</p>
+            <h1>12 <span class="blank">?</span> 3 = 4</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="dui">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest4 -->
+        
+        <div class="quest5">
+            <p class="sequence">Question 5</p>
+            <h1>32 <span class="blank">?</span> 4 = 8</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="dui">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest5 -->
+        
+        <div class="quest6">
+            <p class="sequence">Question 6</p>
+            <h1>47 <span class="blank">?</span> 34 = 81</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="dui">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest6 -->
+        
+        <div class="quest7">
+            <p class="sequence">Question 7</p>
+            <h1>5 <span class="blank">?</span> 7 = 35</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="dui">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest7 -->
+        
+        <div class="quest8">
+            <p class="sequence">Question 8</p>
+            <h1>96 <span class="blank">?</span> 35 = 61</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="dui">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest8 -->
+        
+        <div class="quest9">
+            <p class="sequence">Question 9</p>
+            <h1>137 <span class="blank">?</span> 28 = 109</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="dui">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest9 -->
+        
+        <div class="quest10">
+            <p class="sequence">Question 10</p>
+            <h1>6 <span class="blank">?</span> 8 = 48</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="dui">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest10 -->
+        
+        <div class="quest11">
+            <p class="sequence">Question 11</p>
+            <h1>96 <span class="blank">?</span> 32 = 3</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="dui">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest11 -->
+        
+        <div class="quest12">
+            <p class="sequence">Question 12</p>
+            <h1>123 <span class="blank">?</span> 65 = 188</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="dui">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest12 -->
+        
+        <div class="quest13">
+            <p class="sequence">Question 13</p>
+            <h1>44 <span class="blank">?</span> 22 = 2</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="dui">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest13 -->
+        
+        <div class="quest14">
+            <p class="sequence">Question 14</p>
+            <h1>87 <span class="blank">?</span> 8 = 79</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="dui">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest14 -->
+        
+        <div class="quest15">
+            <p class="sequence">Question 15</p>
+            <h1>76 <span class="blank">?</span> 2 = 38</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="dui">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest15 -->
+        
+        <div class="quest16">
+            <p class="sequence">Question 16</p>
+            <h1>9 <span class="blank">?</span> 9 = 81</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="dui">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest16 -->
+        
+        <div class="quest17">
+            <p class="sequence">Question 17</p>
+            <h1>37 <span class="blank">?</span> 19 = 56</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="dui">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest17 -->
+        
+        <div class="quest18">
+            <p class="sequence">Question 18</p>
+            <h1>17 <span class="blank">?</span> 15 = 32</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="dui">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest18 -->
+        
+        <div class="quest19">
+            <p class="sequence">Question 19</p>
+            <h1>66 <span class="blank">?</span> 11 = 6</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="cuo">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="dui">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest19 -->
+        
+        <div class="quest20">
+            <p class="sequence">Question 20</p>
+            <h1>14 <span class="blank">?</span> 12 = 168</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="#" class="option_a" data-verify="cuo">+</a></li>
+                    <li><a href="#" class="option_b" data-verify="cuo">-</a></li>
+                    <li><a href="#" class="option_c" data-verify="dui">x</a></li>
+                    <li><a href="#" class="option_d" data-verify="cuo">/</a></li>
+                </ul>
+            </div><!-- END answer -->
+        </div><!-- END quest20 -->
+        
+        <div class="result">
+        	<h1>Votre Score</h1>
+            <p>Vous avez répondu <span class="score">0</span></p>
+            <p><a href="#" class="button retry">Rejouer</a></p>
+        </div><!-- END result -->
+    </div><!-- END all_quest -->
+    <div class="hint"><ul><li class="tick">Correct!</li><li class="cross">Erreur!</li></ul></div><!-- END hint -->
+    <div class="copyrights"><p>Copyrights &copy; <script>var year = new Date().getFullYear(); document.write(year);</script> 
+	<a href="http://www.med-infinity.com/" target="_blank" title="Decouvrez ce developper">Med Infinity</a> | Sponsor <a href="http://www.toonsi.com/" target="_blank" title="Apprenez plus de nous ;)">www.toonsi.com</a></p></div><!-- END copyrights -->
+</div><!-- END wrapper -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+window.addEventListener("load",function(){setTimeout(function(){window.scrollTo(0,1)},0)});$(document).ready(function(){var i,totalQuest,timeUp,score,howto=$('.howto'),allQuest=$('.all_quest'),splash=$('.splash'),timeCountDiv=$(".timeCount"),totalQuestDiv=$('.totalQuest'),tickIcon=$('.tick'),crossIcon=$('.cross');init();function init(){i=1;totalQuest=20;timeUp=3500;score=0;$('.result').hide();howto.hide();$('.hint ul').children().hide();allQuest.children().hide();totalQuestDiv.hide().html('QUESTION '+i+' / '+totalQuest);splash.show()}$('.splash a').click(function(e){e.preventDefault();splash.hide();howto.fadeIn('slow')});$('.howto a').click(function(e){e.preventDefault();howto.hide();startGame()});$('.answer a').click(function(e){var ans=$(this).data('verify');var default_ans="dui";e.preventDefault();$('.answer a').addClass('disable_click');if(ans===default_ans){score+=1;tickIcon.fadeIn('slow',function(){$(this).fadeOut('fast')})}else{crossIcon.fadeIn('slow',function(){$(this).fadeOut('fast')})}$('.quest'+i).fadeOut('slow',function(){if(i<totalQuest&&timeUp>=1){i++;$('.quest'+i).fadeIn('slow',function(){$('.answer a').removeClass('disable_click')})}else{showResult();clearInterval(timeLoop)}totalQuestDiv.html('QUESTION '+i+' / '+totalQuest)})});$('.retry').click(function(e){e.preventDefault();init()});function startGame(){$('.quest1').show();timeCountDiv.show();totalQuestDiv.show();timeLoop=setInterval(timeUpCount,1000/60)}function timeUpCount(){var time=parseInt(timeUp);var minutes=Math.floor(time/60);var seconds=time%60;if(timeUp>=1){timeUp--}else{showResult();clearInterval(timeLoop)}timeCountDiv.html("TIME "+minutes+":"+seconds)}function showResult(){allQuest.children().hide();totalQuestDiv.hide();timeCountDiv.hide();$('.result .score').html(score+' sur '+totalQuest+' questions correctement.');$('.result').fadeIn('slow')}});
+</script>
+</body>
+</html>

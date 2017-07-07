@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title data-msg-key="Bubble Wrap">Anti-Stress | Med Infinity</title>
+    <meta name="viewport" content="width=device-width target-densitydpi=device-dpi initial-scale=1 maximum-scale=1 user-scalable=0"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel='stylesheet' type='text/css' href='css/fonts.css'>
+    <script language="text/Javascript" src="js/scaleBody.js" type="text/javascript"></script>
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
+    <link rel="stylesheet" type="text/css" href="css/license.css"></link>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/license.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+    <div id="app-content" class="vbox center">
+      <div class="hbox center">
+        <div id="licensepage" class="view hidden">
+            <div id="licensetext">
+                <div id="licensescroll">
+
+                    <br>
+                    <br>
+                    Anti-Stress est une bulle jeu de popping fun mis en œuvre avec HTML5/Javascript. <br>
+                    <br>
+                    Author: Med Infinity &lt;info@med-infinity.com&gt;<br>
+                    <br>
+                    Cette application est écrite en utilisant HTML5/css3/jquery javascript library et<br>
+                    distribué sous Apache2.0 license. <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div id="licensebtnq" class="licensebtn">Retour</div>
+        </div>
+        <div id="titleView" class="view">
+          <img class="info-icon" src="images/Bubblewrap_ButtonInfo_122111_a.png"></img>
+          <div id="licensebtnl" style="top: 520px; left: 930px;"> i </div>
+          <div id="normalButton" class="vbox center">
+            <div class="hbox center">
+              <div id="normalButtonLabel" class="startButtonLabel" data-msg-key="Normal">Normal</div>
+            </div>
+          </div>
+          <div id="arcadeButton" class="vbox center">
+            <div class="hbox center">
+              <div id="arcadeButtonLabel" class="startButtonLabel" data-msg-key="Arcade">Arcade</div>
+            </div>
+          </div>
+        </div>
+        <div id="playView" class="view hidden">
+          <img id="pauseButton" src="images/Bubblewrap_ButtonPause_122111_a.png" class="arcade-view normal-view"></img>
+          <div id="clock" class="vbox center hidden arcade-view">
+            <div class="hbox center">
+              <div id="clockLabel">:60</div>
+            </div>
+          </div>
+          <div id="score" class="vbox center hidden arcade-view">
+            <div class="hbox center">
+              <div id="currentScoreLabel" class="scoreText" data-msg-key="SCORE:">SCORE:</div>
+              <div id="currentScoreValue" class="scoreText">0</div>
+              <div class="spring"></div>
+              <div id="bestScoreLabel" class="scoreText" data-msg-key="BEST:">BEST:</div>
+              <div id="bestScoreValue" class="scoreText">0</div>
+            </div>
+          </div>
+          <div id="bubbleSheet0" class="bubbleSheet vbox">
+            <div class="spacer"></div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-even"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-even"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-even"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+          </div>
+          <div id="bubbleSheet1" class="bubbleSheet vbox">
+            <div class="spacer"></div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-even"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-even"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-even"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+            <div class="hbox">
+              <div class="bubblegap-odd"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+              <div class="bubblespace"></div>
+              <div class="bubble"><div class="bubble-overlay"></div></div>
+            </div>
+          </div>
+          <div id="helpPage" class="vbox hidden info-view">
+            <div class="spacer"></div>
+            <div class="hbox end">
+              <img id="helpIcon" src="images/Bubblewrap_IconHowTo_122111_a.png"></img>
+            </div>
+            <div class="hbox center">
+              <div class="instruction-box-title" data-msg-key="-INSTRUCTIONS-">-INSTRUCTIONS-</div>
+            </div>
+            <div class="hbox center">
+              <div id="instructionBox" class="vbox">
+                <div class="spacer"></div>
+                <div class="instruction-box-label" data-msg-key="NORMAL MODE:">NORMAL MODE:</div>
+                <div class="instruction-box-content" data-msg-key="Pop as many bubbles as you want.">
+                  Pop autant de bulles que vous voulez.
+                </div>
+                <div class="spacer"></div>
+                <div class="instruction-box-label" data-msg-key="ARCADE MODE:">ARCADE MODE:</div>
+                <div class="instruction-box-content" data-msg-key="Pop as many bubbles as you can in the given time.">
+                  Pop autant de bulles que vous pouvez dans le temps donné.
+                </div>
+                <div class="spacer"></div>
+                <div class="instruction-box-label" data-msg-key="Icons:">ICONS:</div>
+                <div class="hbox">
+                  <div class="spacer"></div>
+                  <div id="clockIcon" class="icon"></div>
+                  <div class="vbox center">
+                    <div class="instruction-box-icon-label" data-msg-key="+ 5 seconds">+ 5 seconds</div>
+                  </div>
+                  <div class="spring"></div>
+                  <div id="hammerIcon" class="icon"></div>
+                  <div class="vbox center">
+                    <div class="instruction-box-icon-label" data-msg-key="Pop surrounding bubbles">Pop bulles environnantes</div>
+                  </div>
+                  <div class="spacer"></div>
+                </div>
+                <div class="hbox">
+                  <div class="spacer"></div>
+                  <div id="bombIcon" class="icon"></div>
+                  <div class="vbox center">
+                    <div class="instruction-box-icon-label" data-msg-key="- 5 seconds">- 5 seconds</div>
+                  </div>
+                  <div class="spring"></div>
+                  <div id="pumpIcon" class="icon"></div>
+                  <div class="vbox center">
+                    <div class="instruction-box-icon-label" data-msg-key="Inflate surrounding bubbles">Gonflez bulles environnantes</div>
+                  </div>
+                  <div class="spacer"></div>
+                </div>
+                <div class="spacer"></div>
+              </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="hbox center">
+              <div class="game-over-button close-button">
+                <div class="gameover-level-2-text close-button-text" data-msg-key="-CLOSE-">-Fermer-</div>
+              </div>
+            </div>
+          </div>
+          <div id="settingsPage" class="vbox hidden info-view">
+            <div class="spacer"></div>
+            <div id="settingsIconContainer" class="hbox end">
+              <img id="settingsIcon" src="images/Bubblewrap_IconSettings_122111_a.png"></img>
+            </div>
+            <div class="hbox center">
+              <div class="settings-box-title" data-msg-key="-HIGH SCORES-">-RECORDS-</div>
+            </div>
+            <div class="hbox center">
+              <div class="vbox leaderBox">
+                <div class="spacer"></div>
+                <div class="hbox">
+                  <div class="leader-entry">1.</div>
+                  <div class="spring leader0Name"></div>
+                  <div class="leader-entry leader0Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">2.</div>
+                  <div class="spring leader1Name"></div>
+                  <div class="leader-entry leader1Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">3.</div>
+                  <div class="spring leader2Name"></div>
+                  <div class="leader-entry leader2Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">4.</div>
+                  <div class="spring leader3Name"></div>
+                  <div class="leader-entry leader3Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">5.</div>
+                  <div class="spring leader4Name"></div>
+                  <div class="leader-entry leader4Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">6.</div>
+                  <div class="spring leader5Name"></div>
+                  <div class="leader-entry leader5Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">7.</div>
+                  <div class="spring leader6Name"></div>
+                  <div class="leader-entry leader6Score"></div>
+                </div>
+                <div class="spacer"></div>
+              </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="hbox center">
+              <div class="settings-box-title" data-msg-key="-SETTNGS-">-REGLAGES-</div>
+            </div>
+            <div class="hbox center">
+              <div id="settingsBox" class="vbox">
+                <div class="spacer"></div>
+                <div class="hbox">
+                  <div class="leader-entry" data-msg-key="AUDIO_FX">AUDIO FX</div>
+                  <div class="spring"></div>
+                  <div class="spacer"></div>
+                  <div class="vbox center">
+                    <div class="audio-setting-label" data-msg-key="ON">ON</div>
+                    <div id="audioSettingOn" class="setting-checkbox checkbox-on"></div>
+                  </div>
+                  <div class="spacer"></div>
+                  <div class="vbox center">
+                    <div class="audio-setting-label" data-msg-key="OF">OFF</div>
+                    <div id="audioSettingOff" class="setting-checkbox"></div>
+                  </div>
+                  <div class="spacer"></div>
+                </div>
+                <div class="spacer"></div>
+              </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="hbox center">
+              <div class="game-over-button close-button">
+                <div class="gameover-level-2-text close-button-text" data-msg-key="-CLOSE-">-Fermer-</div>
+              </div>
+            </div>
+          </div>
+          <div id="gameOverPage" class="vbox center hidden gameover-view">
+            <div class="hbox center">
+              <div id="gameover-title" class="gameover-level-2-text" data-msg-key="-GAME OVER-">-GAME OVER-</div>
+            </div>
+            <div class="spacer"></div>
+            <div class="hbox center">
+              <div class="gameover-level-1-text" data-msg-key="SCORE:">SCORE:</div>
+            </div>
+            <div id="gameover-score-container" class="hbox center">
+              <div id="gameover-score" class="gameover-level-3-text">222</div>
+            </div>
+            <div id="gameover-entry-container" class="hbox">
+              <div class="leader-entry" data-msg-key="NAME:">NAME:</div>
+              <div class="spring vbox center">
+                <input id="gameover-entry" size="35" maxlength="25"></input>
+              </div>
+              <div class="spacer"></div>
+              <div class="vbox center">
+                <div class="audio-setting-label" data-msg-key="ENTER">ENTER</div>
+                <div class="hbox center">
+                  <div id="saveGameButton" class="setting-checkbox"></div>
+                </div>
+              </div>
+            </div>
+            <div class="hbox center">
+              <div class="settings-box-title" data-msg-key="-HIGH SCORES-">-RECORDS-</div>
+            </div>
+            <div class="hbox center">
+              <div class="vbox leaderBox">
+                <div class="spacer"></div>
+                <div class="hbox">
+                  <div class="leader-entry">1.</div>
+                  <div class="spring leader0Name"></div>
+                  <div class="leader-entry leader0Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">2.</div>
+                  <div class="spring leader1Name"></div>
+                  <div class="leader-entry leader1Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">3.</div>
+                  <div class="spring leader2Name"></div>
+                  <div class="leader-entry leader2Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">4.</div>
+                  <div class="spring leader3Name"></div>
+                  <div class="leader-entry leader3Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">5.</div>
+                  <div class="spring leader4Name"></div>
+                  <div class="leader-entry leader4Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">6.</div>
+                  <div class="spring leader5Name"></div>
+                  <div class="leader-entry leader5Score"></div>
+                </div>
+                <div class="hbox">
+                  <div class="leader-entry">7.</div>
+                  <div class="spring leader6Name"></div>
+                  <div class="leader-entry leader6Score"></div>
+                </div>
+                <div class="spacer"></div>
+              </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="hbox center">
+              <div id="homeButton" class="game-over-button">
+                <div id="homeButton" class="gameover-level-2-text" data-msg-key="-HOME-">-ACCUEIL-</div>
+              </div>
+              <div class="spacer"></div>
+              <div id="playAgainButton" class="game-over-button">
+                <div id="playAgainButton" class="gameover-level-2-text" data-msg-key="-PLAY AGAIN-">-REJOUER-</div>
+              </div>
+            </div>
+          </div>
+          <div id="pauseTopFlap" class="pause-view">
+            <img class="info-icon" src="images/Bubblewrap_ButtonInfo_122111_a.png"></img>
+            <div id="quitButton" class="vbox center">
+              <div class="hbox center">
+                <div id="quitButtonLabel" class="pauseViewButtonLabel" data-msg-key="Quit">Fermer</div>
+              </div>
+            </div>
+            <div id="resumeButton" class="vbox center">
+              <div class="hbox center">
+                <div id="resumeButtonLabel" class="pauseViewButtonLabel" data-msg-key="Resume">Reprendre</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
